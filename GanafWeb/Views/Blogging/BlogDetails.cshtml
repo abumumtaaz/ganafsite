@@ -1,0 +1,202 @@
+﻿@using System.Collections
+@using GanafWeb.Domain
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*@section facebookScript
+{
+    <script type="text/javascript">
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '368705343338789',
+                xfbml: true,
+                version: 'v2.4'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+}*@
+
+@section featured
+{
+    <header class="main-header">
+        <div class="container">
+            <h1 class="page-title">Blog Item</h1>
+
+            <ol class="breadcrumb pull-right">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("Blog", "Home", "Blogging")</li>
+                <li class="active">Blog Item</li>
+            </ol>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            @if (ViewBag.Status == "ERROR")
+            {
+                <div class="alert alert-danger">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <strong><i class="fa fa-times"></i>Error!</strong>@ViewBag.StatusMessage
+                </div>
+            }
+            else if (ViewBag.Status == "SUCCESS")
+            {
+                <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <strong><i class="fa fa-times"></i>Success!</strong> @ViewBag.StatusMessage
+                </div>
+            }
+
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                @{
+                    var post = TempData["Post"] as post;
+                    <section>
+                        <h2 class="page-header no-margin-top">@post.topic</h2>
+                        <img src="@Url.Content("~/Content/Uploads/Photos/" + post.image)" class="img-responsive imageborder" alt="Image">
+                        <br/>
+                        <blockquote class="blockquote-">
+                            <p>@post.intro</p>
+                        </blockquote>
+                        <div>
+                            <p>@post.body</p>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                @* Twitter *@
+                                <a href="https://twitter.com/share" class="social-icon-ar sm no-margin-bottom twitter">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                                <script>
+                                    !function (d, s, id) {
+                                        var js,
+                                            fjs = d.getElementsByTagName(s)[0],
+                                            p = /^http:/.test(d.location) ? 'http' : 'https';
+                                        if (!d.getElementById(id)) {
+                                            js = d.createElement(s);
+                                            js.id = id;
+                                            js.src = p + '://platform.twitter.com/widgets.js';
+                                            fjs.parentNode.insertBefore(js, fjs);
+                                        }
+                                    }
+                                    (document, 'script', 'twitter-wjs');
+                                </script>
+                                @*<a href="#" class="social-icon-ar sm no-margin-bottom facebook"><i class="fa fa-facebook"></i></a>*@
+                                @* Google plus *@
+                                <script src="https://apis.google.com/js/platform.js" async defer></script>
+                                <div class="g-plus" data-action="share">
+                                    <i class="fa fa-google-plus"></i>
+                                </div>
+                                @*<a class="social-icon-ar sm no-margin-bottom rss">
+                                    <div
+                                        class="fb-like"
+                                        data-share="true"
+                                        data-width="450"
+                                        data-show-faces="true">
+                                    </div>
+                                </a>*@
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h2 class="section-title">Comments</h2>
+                        <ul class="list-unstyled">
+                            @{
+                                var comments = post.Comments;
+                                if (comments.Count != 0)
+                                {
+                                    foreach (var comment in comments)
+                                    {
+                                        <li class="comment">
+                                            <div class="panel panel-default">
+                                                <div class="panel-body">
+                                                    <p>@comment.comment1</p>
+                                                </div>
+                                                <div class="panel-footer">
+                                                    <div class="row">
+                                                        <div class="col-lg-10 col-md-9 col-sm-8">
+                                                            <i class="fa fa-user"></i><a href="#">@comment.user.firstname</a> <i class="fa fa-clock-o"></i>@comment.commentDate
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    }
+                                }
+                                else
+                                {
+                                    <div class="panel panel-danger">
+                                        <div class="panel-title"></div>
+                                        <div class="panel-body">
+                                            <p class="lead lead-lg">There are no comments yet</p>
+                                        </div>
+                                    </div>
+                                }
+                            }
+
+                        </ul>
+                    </section>
+                    <!-- comments -->
+                    <section class="comment-form">
+                        <h2 class="section-title">Leave a Comment</h2>
+                        @using (Html.BeginForm("Comment", "Blogging"))
+                        {
+                            <div class="form-group">
+                                <label for="inputMessage">Mesagge</label>
+                                <textarea class="form-control" id="inputMessage" rows="6" name="message"></textarea>
+                            </div>
+                            <input type="hidden" value="@post.id" name="postId"/>
+                            <button type="submit" class="btn btn-ar pull-right btn-primary">Submit</button>
+                        }
+                    </section>
+                    <!-- comment-form -->
+
+
+                }
+            </div>
+            <div class="col-md-4">
+                <aside class="sidebar">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <i class="fa fa-comments"></i>Posts
+                        </div>
+                        <div class="panel-body">
+                            <ul class="comments-sidebar">
+                                @{
+                                    IEnumerable<GanafWeb.Domain.post> posts = TempData["Posts"] as List<GanafWeb.Domain.post>;
+                                    if (posts != null)
+                                    {
+                                        foreach (var p in posts)
+                                        {
+                                            <li>
+                                                <img src="@Url.Content("~/Content/Uploads/Photos/Small/" + p.image)" class="img-responsive" alt="Image">
+                                                <h4>@Html.ActionLink(p.topic, "Details", "Blogging", new{id = @p.id}, null)</h4>
+                                                <p>@p.intro.Substring(0, p.intro.Length/2) ...</p>
+                                            </li>
+                                            <hr class="dotted"/>
+                                        }
+                                    }
+                                }
+                            </ul>
+                        </div>
+                    </div>
+
+                </aside>
+                <!-- Sidebar -->
+            </div>
+        </div>
+    </div>
+    <!-- container  -->
+
+}

@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GanafWeb", "GanafWeb\GanafWeb.csproj", "{E4A9C974-EC86-4662-AA33-61F8C8E867A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GanafWeb.Domain", "GanafWeb.Domain\GanafWeb.Domain.csproj", "{5531CE1F-B463-49B0-B28F-5F10730E7D2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GanafWeb.Logic", "GanafWeb.Logic\GanafWeb.Logic.csproj", "{411AD2EC-13DB-4DDC-987E-DB444D5F337E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E4A9C974-EC86-4662-AA33-61F8C8E867A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4A9C974-EC86-4662-AA33-61F8C8E867A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4A9C974-EC86-4662-AA33-61F8C8E867A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4A9C974-EC86-4662-AA33-61F8C8E867A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5531CE1F-B463-49B0-B28F-5F10730E7D2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5531CE1F-B463-49B0-B28F-5F10730E7D2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5531CE1F-B463-49B0-B28F-5F10730E7D2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5531CE1F-B463-49B0-B28F-5F10730E7D2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{411AD2EC-13DB-4DDC-987E-DB444D5F337E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{411AD2EC-13DB-4DDC-987E-DB444D5F337E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{411AD2EC-13DB-4DDC-987E-DB444D5F337E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{411AD2EC-13DB-4DDC-987E-DB444D5F337E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

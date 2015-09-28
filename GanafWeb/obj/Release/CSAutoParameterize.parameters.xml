@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\v11.0;Initial Catalog=aspnet-GanafWeb-20150531112525;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\aspnet-GanafWeb-20150531112525.mdf" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="F:\\Javaclass2\\GANAF-Site\\GanafWeb\\obj\\Release\\Package\\PackageTmp\\Views\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="F:\\Javaclass2\\GANAF-Site\\GanafWeb\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="GanafDBB-Web.config Connection String" description="GanafDBB Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/GanafEntity.csdl|res://*/GanafEntity.ssdl|res://*/GanafEntity.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=MASTERPIECE-PC\SQLEXPRESS;initial catalog=GanafDBB;integrated security=True;multipleactiveresultsets=True;application name=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="F:\\Javaclass2\\GANAF-Site\\GanafWeb\\obj\\Release\\Package\\PackageTmp\\Views\\Web\.config$" match="/configuration/connectionStrings/add[@name='GanafDBB']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="F:\\Javaclass2\\GANAF-Site\\GanafWeb\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='GanafDBB']/@connectionString" />
+  </parameter>
+  <parameter name="GanafDBEntities-Web.config Connection String" description="GanafDBEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/GanafWebEntity.csdl|res://*/GanafWebEntity.ssdl|res://*/GanafWebEntity.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\sqlexpress;initial catalog=GanafDBB;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="F:\\Javaclass2\\GANAF-Site\\GanafWeb\\obj\\Release\\Package\\PackageTmp\\Views\\Web\.config$" match="/configuration/connectionStrings/add[@name='GanafDBEntities']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="F:\\Javaclass2\\GANAF-Site\\GanafWeb\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='GanafDBEntities']/@connectionString" />
+  </parameter>
+  <parameter name="GanafWeb.Models.GanafDBBEntities1-Web.config Connection String" description="GanafWeb.Models.GanafDBBEntities1 Connection String used in web.config by the application to access the database." defaultValue="GanafWeb.Models.GanafDBBEntities1_ConnectionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="F:\\Javaclass2\\GANAF-Site\\GanafWeb\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='GanafWeb.Models.GanafDBBEntities1']/@connectionString" />
+  </parameter>
+  <parameter name="GanafWeb.Models.UsersContext-Web.config Connection String" description="GanafWeb.Models.UsersContext Connection String used in web.config by the application to access the database." defaultValue="GanafWeb.Models.UsersContext_ConnectionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="F:\\Javaclass2\\GANAF-Site\\GanafWeb\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='GanafWeb.Models.UsersContext']/@connectionString" />
+  </parameter>
+</parameters>

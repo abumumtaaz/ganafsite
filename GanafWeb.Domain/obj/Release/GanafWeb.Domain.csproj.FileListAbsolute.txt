@@ -1,0 +1,8 @@
+F:\Javaclass2\GANAF-Site\GanafWeb.Domain\bin\Release\GanafWeb.Domain.dll.config
+F:\Javaclass2\GANAF-Site\GanafWeb.Domain\bin\Release\GanafWeb.Domain.dll
+F:\Javaclass2\GANAF-Site\GanafWeb.Domain\bin\Release\GanafWeb.Domain.pdb
+F:\Javaclass2\GANAF-Site\GanafWeb.Domain\bin\Release\EntityFramework.dll
+F:\Javaclass2\GANAF-Site\GanafWeb.Domain\bin\Release\EntityFramework.xml
+F:\Javaclass2\GANAF-Site\GanafWeb.Domain\obj\Release\GanafWeb.Domain.csprojResolveAssemblyReference.cache
+F:\Javaclass2\GANAF-Site\GanafWeb.Domain\obj\Release\GanafWeb.Domain.dll
+F:\Javaclass2\GANAF-Site\GanafWeb.Domain\obj\Release\GanafWeb.Domain.pdb

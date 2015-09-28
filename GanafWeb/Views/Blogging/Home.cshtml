@@ -1,0 +1,78 @@
+﻿@using GanafWeb.Domain
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section featured
+{
+    <header class="main-header">
+        <div class="container">
+            <h1 class="page-title">Blog Home</h1>
+
+            <ol class="breadcrumb pull-right">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li class="active">Blog Home</li>
+            </ol>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row masonry-container">
+            @{
+                //var a = TempData["Posts"];
+                var allPost = TempData["Posts"] as List<post>;
+                //IEnumerable<post> allPost = a as List<post>;
+                if (allPost != null)
+                {
+                    foreach (var post in allPost)
+                    {
+                        <div class="col-md-4 col-sm-6 masonry-item blog-item">
+                            <div class="thumbnail">
+                                <img src="@Url.Content("~/Content/Uploads/Photos/" + post.image)" class="img-responsive" alt="Image">
+                                <div class="caption">
+                                    <h3>@post.topic</h3>
+                                    <p>@post.intro</p>
+                                    <hr class="dotted">
+                                    @*<span class="autor-post">
+                                    <img src="~/Content/assets/img/demo/w10.jpg" alt="">
+                                    by <a href="#">adrigm</a>
+                                </span>*@
+                                    @Html.ActionLink("Read more", "Details", "Blogging", new{id = @post.id}, htmlAttributes: new{@class = "btn btn-ar btn-primary pull-right"})
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p>There are no posts yet.</p>
+                }
+            }
+        </div>
+        <!-- masonry-container  -->
+
+        @*<div class="row">
+            <section class="text-center">
+                <ul class="pagination pagination-lg pagination-border">
+                    <li class="disabled"><a href="#">&laquo;</a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">6</a></li>
+                    <li><a href="#">7</a></li>
+                    <li><a href="#">8</a></li>
+                    <li><a href="#">9</a></li>
+                    <li><a href="#">10</a></li>
+                    <li><a href="#">&raquo;</a></li>
+                </ul>
+            </section>
+        </div>*@
+        <!-- row -->
+    </div>
+    <!-- container  -->
+
+}

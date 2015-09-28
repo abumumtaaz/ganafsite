@@ -1,0 +1,29 @@
+﻿@model GanafWeb.Models.request
+
+@{
+    ViewBag.Title = "ContactUs";
+}
+
+<h2>ContactUs</h2>
+@using (@Html.BeginForm("ContactUs","Home")){
+<ul>
+    <li>
+        @Html.LabelFor(m =>m.username)
+        @Html.TextBoxFor(m =>m.username)
+    </li>
+    <li>
+        @Html.LabelFor(m =>m.requestType)
+        @Html.TextBoxFor(m=>m.requestType)
+    </li>
+     <li>
+        @Html.LabelFor(m =>m.urgency)
+        @Html.TextBoxFor(m=>m.urgency)
+    </li>
+     <li>
+        @Html.LabelFor(m =>m.details)
+        @Html.TextBoxFor(m=>m.details)
+    </li>
+
+</ul>
+        <input type="submit" value="Send Request" />
+}

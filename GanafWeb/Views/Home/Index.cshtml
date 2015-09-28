@@ -1,0 +1,499 @@
+﻿@using GanafWeb.Logic.Constants
+@{
+    ViewBag.Title = "Ganaf ";
+}
+@*@section breadcrumb{
+    <li>
+        @Html.ActionLink("Home", "Index", "Home", null, htmlAttributes: new { @class = "dropdown-toggle" })
+    </li>
+    <li>
+        @Html.ActionLink("Blog", "Home", "Blogging", null, htmlAttributes: new { @class = "dropdown-toggle" })
+    </li>
+    <li>
+        @Html.ActionLink("Contact Us", "ContactUs", "Contact", null, htmlAttributes: new { @class = "dropdown-toggle" })
+    </li>
+    <li>
+        @Html.ActionLink("About Us", "About", "Home", null, htmlAttributes: new {@class = "dropdown-toggle"})
+    </li>
+    
+}*@
+@section featured {
+
+    <header id="header-full">
+        <div class="wrap-primary">
+            <div class="container">
+                <h1 class="head-title animated bounceInDown animation-delay-8">GANAF Technologies</h1>
+                <img src="~/Content/assets/img/logo_raw_white.png" alt="" class="aligncenter head-full-logo animated bounceIn animation-delay-5">
+                <h2 class="secondary-color text-center head-subtitle animated fadeInUp animation-delay-14">professional in all IT professions</h2>
+                <p class="lead text-center animated fadeInUp animation-delay-14">We bring the revolution to the world of software development, our principles are experience, knowledge and creativity. Our customers are glad they knew us.</p>
+                <div class="row header-full-icons text-center">
+                    <div class="col-sm-3 animated fadeInDown animation-delay-19">
+                        <span class="icon-ar icon-ar-circle icon-ar-xl-lg icon-ar-white icon-ar-inverse"><i class="fa fa-html5"></i></span>
+                        <h3>Experience</h3>
+                        <p class="text-center">We've got a host of experienced developers.</p>
+                    </div>
+                    <div class="col-sm-3 animated fadeInDown animation-delay-21">
+                        <span class="icon-ar icon-ar-circle icon-ar-xl-lg icon-ar-white icon-ar-inverse"><i class="fa fa-css3"></i></span>
+                        <h3>Creativity</h3>
+                        <p class="text-center">Our innovative and creative power is superb.</p>
+                    </div>
+                    <div class="col-sm-3 animated fadeInDown animation-delay-22">
+                        <span class="icon-ar icon-ar-circle icon-ar-xl-lg icon-ar-white icon-ar-inverse"><i class="fa fa-bold"></i></span>
+                        <h3>Productivity</h3>
+                        <p class="text-center">We give you something better than your request.</p>
+                    </div>
+                    <div class="col-sm-3 animated fadeInDown animation-delay-20">
+                        <span class="icon-ar icon-ar-circle icon-ar-xl-lg icon-ar-white icon-ar-inverse"><i class="fa fa-desktop"></i></span>
+                        <h3>Sincerity</h3>
+                        <p class="text-center">We cannot stand the chance of losing your trust.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="wrap-dark-color margin-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 feature-container">
+                    <a class="feature-icon">
+                        <i class="fa fa-desktop"></i>
+                        <h4>Mission</h4>
+                    </a>
+                    <a class="feature-icon">
+                        <i class="fa fa-download"></i>
+                        <h4>Downloads</h4>
+                    </a>
+                    <a class="feature-icon">
+                        <i class="fa fa-cloud"></i>
+                        <h4>Training</h4>
+                    </a>
+                    <a class="feature-icon">
+                        <i class="fa fa-ambulance"></i>
+                        <h4>Help</h4>
+                    </a>
+                </div>
+                <div class="col-md-5 hidden-sm hidden-xs">
+                    <p class="lead text-center">We use the best technologies to give you the best. We work as if we are reading your mind!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="margin-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <div class="content-box box-default animated fadeInUp animation-delay-10">
+                        <span class="icon-ar icon-ar-lg icon-ar-round icon-ar-inverse"><i class="fa fa-desktop"></i></span>
+                        <h4 class="content-box-title">Desktop Apps</h4>
+                        <p>We are expert in desktop application development. We combine the best tehnologies, so our apps can be executed on all OS.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="content-box box-default animated fadeInUp animation-delay-14">
+                        <span class="icon-ar icon-ar-lg icon-ar-round icon-ar-inverse"><i class="fa fa-mobile-phone"></i></span>
+                        <h4 class="content-box-title">Mobile Apps</h4>
+                        <p>We build apps that run on smartphones; ranging from java to android to windows phones. We are aware of device memory, so our apps are smart.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="content-box box-default animated fadeInUp animation-delay-16">
+                        <span class="icon-ar icon-ar-lg icon-ar-round icon-ar-inverse"><i class="fa fa-desktop"></i></span>
+                        <h4 class="content-box-title">Web Solutions</h4>
+                        <p>We combine the latest technologies to build first class web solutions. Our developers have years of experience which is why our solutions stands out.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <section class="margin-bottom">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="right-line">What do we do?</h2>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="text-icon wow fadeInUp">
+                        <span class="icon-ar icon-ar-lg"><i class="fa fa-cloud"></i></span>
+                        <div class="text-icon-content">
+                            <h3 class="no-margin">Cloud Computing</h3>
+                            <p>We engage the best cloud technologies to deploy cloud based solutions that are user friendly.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="text-icon wow fadeInUp">
+                        <span class="icon-ar icon-ar-lg"><i class="fa fa-desktop"></i></span>
+                        <div class="text-icon-content">
+                            <h3 class="no-margin">Desktop & Web Solutions</h3>
+                            <p>Do you want it localized or over the internet? We are expert in both aspect and we use the best technologies.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="text-icon wow fadeInUp">
+                        <span class="icon-ar icon-ar-lg"><i class="fa fa-tablet"></i></span>
+                        <div class="text-icon-content">
+                            <h3 class="no-margin">Mobile and Tablet Apps</h3>
+                            <p>We don't just develop mobile solutions, we are aware that those devices are memory inclined, so our apps are astonishingly smart.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="text-icon wow fadeInUp">
+                        <span class="icon-ar icon-ar-lg"><i class="fa fa-bullhorn"></i></span>
+                        <div class="text-icon-content">
+                            <h3 class="no-margin">Consultation</h3>
+                            <p>We serve as IT consultant to many firms. You can always trust GANAF when it comes to your needs. We have great listening ears.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="text-icon wow fadeInUp">
+                        <span class="icon-ar icon-ar-lg"><i class="fa fa-graduation-cap"></i></span>
+                        <div class="text-icon-content">
+                            <h3 class="no-margin">Training and development</h3>
+                            <p>We offer trainings in all IT related fields and we also give back to the society by developing upcoming IT experts. You can join us if you think we can help.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="text-icon wow fadeInUp">
+                        <span class="icon-ar icon-ar-lg"><i class="fa fa-paper-plane-o"></i></span>
+                        <div class="text-icon-content">
+                            <h3 class="no-margin">Customer service</h3>
+                            <p>We are here because of our customers, we don't joke with your requests. We always try to provide services better than what our customers request.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- row -->
+        </section>
+    </div>
+    <!-- container -->
+
+    <div class="container">
+        <section class="margin-bottom">
+            <p class="lead lead-lg text-center primary-color margin-bottom  wow fadeInDown">Know the <strong>GANAF Technologies</strong> and surprise yourself</p>
+            <div class="row wow fadeInRight">
+                <div class="col-md-6">
+                    <h2 class="no-margin-top">About us</h2>
+                    <p>GANAF was borne out of the quest for an indigenous IT firm which is efficient, trustworthy and productive.</p>
+                    <p>Over the years, we have expended our experience to provide world class software solutions to dozens of organizations.</p>
+                    <p>We are aware of advancement in technology and we scale well with it so that we can always provid our customers with something better than what they expected.</p>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="panel-group" id="accordion">
+                        <div class="panel panel-default wow fadeInUp">
+                            <div class="panel-heading panel-heading-link">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                    <i class="fa fa-lightbulb-o"></i>Talent and creativity
+                            </a>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <p>All our development team has a special talent in software development! That is the simple secret behind our solutions.</p>
+                                    <p>We have always been surprising our customers with our solutions just because we are an expert in what we do and we do it well.</p>
+                                    <p>Our creative power is excellent... We bet you'd love it too!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default wow fadeInUp">
+                            <div class="panel-heading panel-heading-link">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed">
+                                    <i class="fa fa-desktop"></i>Mission
+                            </a>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <p>Our mission statement is what everyone wants to read!</p>
+                                    <p>I am sorry to inform you that our mission statement is not yet available, it travelled long ago and it has since not yet returned!</p>
+                                    <p>You can help us make a search for it and tell us if you are able to find it , we would also apppreciate it if you can report at the nearest police station.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default wow fadeInUp">
+                            <div class="panel-heading panel-heading-link">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="collapsed">
+                                    <i class="fa fa-user"></i>Vision
+                            </a>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <p>Our mission statement is what everyone wants to read!</p>
+                                    <p>I am sorry to inform you that our mission statement is not yet available, it travelled long ago and it has since not yet returned!</p>
+                                    <p>You can help us make a search for it and tell us if you are able to find it , we would also apppreciate it if you can report at the nearest police station.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <section class="margin-bottom">
+            <h2 class="section-title">Latest Works</h2>
+            <div class="bxslider-controls">
+                <span id="bx-prev4"></span>
+                <span id="bx-next4"></span>
+            </div>
+            <ul class="bxslider" id="latest-works">
+                <li>
+                    <div class="img-caption-ar">
+                        <img src="~/Content/assets/img/demo/w1.jpg" class="img-responsive" alt="Image">
+                        <div class="caption-ar">
+                            <div class="caption-content">
+                                <a href="#" class="animated fadeInDown"><i class="fa fa-search"></i>More info</a>
+                                <h4 class="caption-title">Title Caption</h4>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="img-caption-ar">
+                        <img src="~/Content/assets/img/demo/w2.jpg" class="img-responsive" alt="Image">
+                        <div class="caption-ar">
+                            <div class="caption-content">
+                                <a href="#" class="animated fadeInDown"><i class="fa fa-search"></i>More info</a>
+                                <h4 class="caption-title">Title Caption</h4>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="img-caption-ar">
+                        <img src="~/Content/assets/img/demo/w3.jpg" class="img-responsive" alt="Image">
+                        <div class="caption-ar">
+                            <div class="caption-content">
+                                <a href="#" class="animated fadeInDown"><i class="fa fa-search"></i>More info</a>
+                                <h4 class="caption-title">Title Caption</h4>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="img-caption-ar">
+                        <img src="~/Content/assets/img/demo/w4.jpg" class="img-responsive" alt="Image">
+                        <div class="caption-ar">
+                            <div class="caption-content">
+                                <a href="#" class="animated fadeInDown"><i class="fa fa-search"></i>More info</a>
+                                <h4 class="caption-title">Title Caption</h4>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="img-caption-ar">
+                        <img src="~/Content/assets/img/demo/w5.jpg" class="img-responsive" alt="Image">
+                        <div class="caption-ar">
+                            <div class="caption-content">
+                                <a href="#" class="animated fadeInDown"><i class="fa fa-search"></i>More info</a>
+                                <h4 class="caption-title">Title Caption</h4>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="img-caption-ar">
+                        <img src="~/Content/assets/img/demo/w6.jpg" class="img-responsive" alt="Image">
+                        <div class="caption-ar">
+                            <div class="caption-content">
+                                <a href="#" class="animated fadeInDown"><i class="fa fa-search"></i>More info</a>
+                                <h4 class="caption-title">Title Caption</h4>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="img-caption-ar">
+                        <img src="~/Content/assets/img/demo/w7.jpg" class="img-responsive" alt="Image">
+                        <div class="caption-ar">
+                            <div class="caption-content">
+                                <a href="#" class="animated fadeInDown"><i class="fa fa-search"></i>More info</a>
+                                <h4 class="caption-title">Title Caption</h4>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="img-caption-ar">
+                        <img src="~/Content/assets/img/demo/w8.jpg" class="img-responsive" alt="Image">
+                        <div class="caption-ar">
+                            <div class="caption-content">
+                                <a href="#" class="animated fadeInDown"><i class="fa fa-search"></i>More info</a>
+                                <h4 class="caption-title">Title Caption</h4>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="img-caption-ar">
+                        <img src="~/Content/assets/img/demo/w9.jpg" class="img-responsive" alt="Image">
+                        <div class="caption-ar">
+                            <div class="caption-content">
+                                <a href="#" class="animated fadeInDown"><i class="fa fa-search"></i>More info</a>
+                                <h4 class="caption-title">Title Caption</h4>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="img-caption-ar">
+                        <img src="~/Content/assets/img/demo/w10.jpg" class="img-responsive" alt="Image">
+                        <div class="caption-ar">
+                            <div class="caption-content">
+                                <a href="#" class="animated fadeInDown"><i class="fa fa-search"></i>More info</a>
+                                <h4 class="caption-title">Title Caption</h4>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="img-caption-ar">
+                        <img src="~/Content/assets/img/demo/w11.jpg" class="img-responsive" alt="Image">
+                        <div class="caption-ar">
+                            <div class="caption-content">
+                                <a href="#" class="animated fadeInDown"><i class="fa fa-search"></i>More info</a>
+                                <h4 class="caption-title">Title Caption</h4>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="img-caption-ar">
+                        <img src="~/Content/assets/img/demo/w12.jpg" class="img-responsive" alt="Image">
+                        <div class="caption-ar">
+                            <div class="caption-content">
+                                <a href="#" class="animated fadeInDown"><i class="fa fa-search"></i>More info</a>
+                                <h4 class="caption-title">Title Caption</h4>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <section class="carousel-section">
+        <div id="carousel-example-generic" class="carousel carousel-razon slide" data-ride="carousel" data-interval="5000">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-7">
+                                <div class="carousel-caption">
+                                    <div class="carousel-text">
+                                        <h1 class="animated fadeInDownBig animation-delay-7 carousel-title">A company with a difference</h1>
+                                        <h2 class="animated fadeInDownBig animation-delay-5  crousel-subtitle">We give you everything done, except the coffee</h2>
+                                        <ul class="list-unstyled carousel-list">
+                                            <li class="animated bounceInLeft animation-delay-11"><i class="fa fa-check"></i>Desktop applications</li>
+                                            <li class="animated bounceInLeft animation-delay-13"><i class="fa fa-check"></i>Mobile Applications</li>
+                                            <li class="animated bounceInLeft animation-delay-15"><i class="fa fa-check"></i>Web Solutions</li>
+                                        </ul>
+                                        <p class="animated fadeInUpBig animation-delay-17">Our customers are always excited at the way our solutions scale <span><i class="fa fa-thumbs-up"></i></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-5 hidden-xs carousel-img-wrap">
+                                <div class="carousel-img">
+                                    <img src="~/Content/assets/img/demo/pre21.png" class="img-responsive animated bounceInUp animation-delay-3" alt="Image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-8">
+                                <div class="carousel-caption">
+                                    <div class="carousel-text">
+                                        <h1 class="animated fadeInDownBig animation-delay-7 carousel-title">Customization extremes</h1>
+                                        <h2 class="animated fadeInDownBig animation-delay-5  crousel-subtitle">Our products are customizable</h2>
+                                        <ul class="list-unstyled carousel-list">
+                                            <li class="animated bounceInLeft animation-delay-11"><i class="fa fa-check"></i>Built to your taste</li>
+                                            <li class="animated bounceInLeft animation-delay-13"><i class="fa fa-check"></i>Modify it at any time</li>
+                                            <li class="animated bounceInLeft animation-delay-15"><i class="fa fa-check"></i>Change colour themes when you like</li>
+                                        </ul>
+                                        <p class="animated fadeInUpBig animation-delay-17">We build solutions that totally becomes yours. <span>Modify it the way you like</span>.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-4 hidden-xs carousel-img-wrap">
+                                <div class="carousel-img">
+                                    <img src="~/Content/assets/img/demo/pre21.png" class="img-responsive animated bounceInUp animation-delay-3" alt="Image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-7 col-sm-9">
+                                <div class="carousel-caption">
+                                    <div class="carousel-text">
+                                        <h1 class="animated fadeInDownBig animation-delay-7 carousel-title">Customers First</h1>
+                                        <h2 class="animated fadeInDownBig animation-delay-5  crousel-subtitle">We put the interest of our customers first</h2>
+                                        <ul class="list-unstyled carousel-list">
+                                            <li class="animated bounceInLeft animation-delay-11"><i class="fa fa-check"></i>Dedicated support team</li>
+                                            <li class="animated bounceInLeft animation-delay-13"><i class="fa fa-check"></i>Always at your service</li>
+                                            <li class="animated bounceInLeft animation-delay-15"><i class="fa fa-check"></i>Available exactly when needed</li>
+                                        </ul>
+                                        <p class="animated fadeInUpBig animation-delay-17">We have built a staff force that can cater for our customers... <span>We are always ready to help</span>.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-5 col-sm-3 hidden-xs carousel-img-wrap">
+                                <div class="carousel-img">
+                                    <img src="~/Content/assets/img/demo/pre21.png" class="img-responsive animated bounceInUp animation-delay-3" alt="Image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+    </section>
+    <!-- carousel -->
+    <section class="section-lines">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 padding-40">
+                    <p class="slogan text-center no-margin">Discover our projects and the rigorous process of <span>creation</span>. Our principles are <span>creativity</span>, <span>design</span>, <span>experience</span> and <span>knowledge</span>. We are backed by several years of <span>research</span>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+}
+
+@section scripts{
+
+    <script src="~/Content/assets/js/home_full.js"></script>
+}

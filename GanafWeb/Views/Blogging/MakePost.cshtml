@@ -1,0 +1,118 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section featured
+{
+    <header class="main-header">
+        <div class="container">
+            <h1 class="page-title">Blog Item</h1>
+
+            <ol class="breadcrumb pull-right">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("Blog", "Home", "Blogging")</li>
+                <li class="active">Blog Item</li>
+            </ol>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            @if (ViewBag.Status == "ERROR")
+            {
+                <div class="alert alert-danger">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <strong><i class="fa fa-times"></i>Error!</strong>@ViewBag.StatusMessage
+                </div>
+            }
+            else if (ViewBag.Status == "SUCCESS")
+            {
+                <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <strong><i class="fa fa-times"></i>Success!</strong> @ViewBag.StatusMessage
+                </div>
+            }
+
+        </div>
+        <div class="row">
+            @{
+                <div class="col-md-8">
+                    <section class="comment-form">
+                        <h2 class="section-title">Add a new post</h2>
+                        @using (Html.BeginForm("MakePost", "Blogging", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                            <div class="form-group">
+                                <label for="inputName">Posted By:</label>
+                                <input type="text" name="postedBy" class="form-control" id="inputName" placeholder="Your name">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputTopic">Topic:</label>
+                                <input type="text" name="topic" class="form-control" id="inputTopic" placeholder="example@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputImage">Image:</label>
+                                <input name="picture" type="file" class="form-control" id="inputImage">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputMessage">Intro:</label>
+                                <textarea name="intro" class="form-control" id="inputIntro" rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputMessage">Body:</label>
+                                <textarea name="body" class="form-control" id="inputMessage" rows="6"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-ar pull-right btn-primary">Submit</button>
+                        }
+                    </section>
+                    <!-- comment-form -->
+
+
+
+                </div>
+                <div class="col-md-4">
+                    <aside class="sidebar">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <i class="fa fa-comments"></i>Posts
+                            </div>
+                            <div class="panel-body">
+                                <ul class="comments-sidebar">
+                                    @{
+                                        IEnumerable<GanafWeb.Domain.post> posts = TempData["Posts"] as List<GanafWeb.Domain.post>;
+                                        if (posts != null)
+                                        {
+                                            foreach (var p in posts)
+                                            {
+                                                <li>
+                                                    <img src="@Url.Content("~/Content/Uploads/Photos/Small/" + p.image)" class="img-responsive" alt="Image">
+                                                    <h4>@Html.ActionLink(p.topic, "Details", "Blogging")</h4>
+                                                    <p>@p.intro.Substring(0, p.intro.Length/2) ...</p>
+                                                    <div class="col-sm-2">
+                                                        <span class="col-sm-2">@Html.ActionLink("Edit Post", "EditPost", "Blogging", new {id = @p.id}, htmlAttributes: new {@class = "btn btn-ar btn-primary"})</span>
+                                                        
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <span class="col-sm-2 col-sm-offset-2">@Html.ActionLink("Delete Post", "DeletePost", "Blogging", new {id = @p.id}, htmlAttributes: new {@class = "btn btn-ar btn-primary"})</span>
+                                                    </div>
+                                                </li>
+                                                <hr class="dotted"/>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <p>There are no posts yet</p>
+                                        }
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+
+                    </aside>
+                    <!-- Sidebar -->
+                </div>
+            }
+        </div>
+
+    </div>
+    <!-- container  -->
+}
+

@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GanafDBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="GanafDBEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="contacts" EntityType="GanafDBModel.contact" />
+    <EntitySet Name="requests" EntityType="GanafDBModel.request" />
+    <EntitySet Name="sysdiagrams" EntityType="GanafDBModel.sysdiagram" />
+    <EntitySet Name="users" EntityType="GanafDBModel.user" />
+    <AssociationSet Name="FK_users_request" Association="GanafDBModel.FK_users_request">
+      <End Role="request" EntitySet="requests" />
+      <End Role="users" EntitySet="users" />
+    </AssociationSet>
+    <EntitySet Name="Comments" EntityType="GanafDBModel.Comment" />
+    <EntitySet Name="posts" EntityType="GanafDBModel.post" />
+    <AssociationSet Name="FK_Comment_post" Association="GanafDBModel.FK_Comment_post">
+      <End Role="post" EntitySet="posts" />
+      <End Role="Comment" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comment_users" Association="GanafDBModel.FK_Comment_users">
+      <End Role="user" EntitySet="users" />
+      <End Role="Comment" EntitySet="Comments" />
+    </AssociationSet>
+    <EntitySet Name="authenticatedUsers" EntityType="GanafDBModel.authenticatedUser" />
+    <AssociationSet Name="FK_authenticatedUser_users" Association="GanafDBModel.FK_authenticatedUser_users">
+      <End Role="user" EntitySet="users" />
+      <End Role="authenticatedUser" EntitySet="authenticatedUsers" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="contact">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="firstname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="lastname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="phone" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="comment" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="request">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="username" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="requestType" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="urgency" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="details" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="requestId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="users" Relationship="GanafDBModel.FK_users_request" FromRole="request" ToRole="users" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="userId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="request" Relationship="GanafDBModel.FK_users_request" FromRole="users" ToRole="request" />
+    <NavigationProperty Name="Comments" Relationship="GanafDBModel.FK_Comment_users" FromRole="user" ToRole="Comment" />
+    <Property Type="String" Name="firstname" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="lastname" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="authenticatedUsers" Relationship="GanafDBModel.FK_authenticatedUser_users" FromRole="user" ToRole="authenticatedUser" />
+    <Property Type="String" Name="userType" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_users_request">
+    <End Role="request" Type="GanafDBModel.request" Multiplicity="1" />
+    <End Role="users" Type="GanafDBModel.user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="request">
+        <PropertyRef Name="username" />
+      </Principal>
+      <Dependent Role="users">
+        <PropertyRef Name="username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="userId" Nullable="false" />
+    <Property Type="Int32" Name="postId" Nullable="false" />
+    <Property Type="String" Name="comment1" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="commentDate" Nullable="false" Precision="0" />
+    <NavigationProperty Name="post" Relationship="GanafDBModel.FK_Comment_post" FromRole="Comment" ToRole="post" />
+    <NavigationProperty Name="user" Relationship="GanafDBModel.FK_Comment_users" FromRole="Comment" ToRole="user" />
+  </EntityType>
+  <EntityType Name="post">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="postedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="postDate" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Comments" Relationship="GanafDBModel.FK_Comment_post" FromRole="post" ToRole="Comment" />
+    <Property Type="String" Name="body" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="topic" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="intro" Nullable="false" MaxLength="550" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="image" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_Comment_post">
+    <End Type="GanafDBModel.post" Role="post" Multiplicity="1" />
+    <End Type="GanafDBModel.Comment" Role="Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="post">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="postId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comment_users">
+    <End Type="GanafDBModel.user" Role="user" Multiplicity="1" />
+    <End Type="GanafDBModel.Comment" Role="Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="authenticatedUser">
+    <Key>
+      <PropertyRef Name="currentDate" />
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Type="DateTime" Name="currentDate" Nullable="false" Precision="0" />
+    <Property Type="Int32" Name="userId" Nullable="false" />
+    <NavigationProperty Name="user" Relationship="GanafDBModel.FK_authenticatedUser_users" FromRole="authenticatedUser" ToRole="user" />
+  </EntityType>
+  <Association Name="FK_authenticatedUser_users">
+    <End Type="GanafDBModel.user" Role="user" Multiplicity="1" />
+    <End Type="GanafDBModel.authenticatedUser" Role="authenticatedUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="authenticatedUser">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

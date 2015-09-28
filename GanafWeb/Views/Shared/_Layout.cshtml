@@ -1,0 +1,337 @@
+﻿@using GanafWeb.Logic.Abstract
+@using GanafWeb.Logic.Concrete
+@using GanafWeb.Logic.Constants
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>GANAF Technologies</title>
+
+    <link rel="shortcut icon" href="~/Content/assets/img/favicon.png" />
+
+    <meta name="description" content="">
+
+    <!-- CSS -->
+    <link href="~/Content/assets/css/preload.css" rel="stylesheet">
+
+    <!-- Compiled in vendors.js -->
+    <!--
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-switch.min.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/animate.min.css" rel="stylesheet">
+    <link href="assets/css/slidebars.min.css" rel="stylesheet">
+    <link href="assets/css/lightbox.css" rel="stylesheet">
+    <link href="assets/css/jquery.bxslider.css" rel="stylesheet"/>
+    <link href="assets/css/buttons.css" rel="stylesheet">
+    -->
+
+    <link href="~/Content/assets/css/vendors.css" rel="stylesheet">
+    <link href="~/Content/assets/css/syntaxhighlighter/shCore.css" rel="stylesheet">
+
+    <link href="~/Content/assets/css/style-blue.css" rel="stylesheet" title="default">
+    <link href="~/Content/assets/css/width-full.css" rel="stylesheet" title="default">
+
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="~/Content/assets/js/html5shiv.min.js"></script>
+        <script src="~/Content/assets/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    @RenderSection("facebookScript", required: false)
+    <div id="sb-site">
+        <div class="boxed">
+
+            <header id="header-full-top" class="hidden-xs header-full">
+                <div class="container">
+                    <div class="header-full-title">
+                        <h1 class="animated fadeInRight">@Html.ActionLink("GANAF", "Index", "Home") <span>Technologies</span></h1>
+                        <p class="animated fadeInRight">Professional in all IT professions</p>
+                    </div>
+                    <nav class="top-nav">
+                        <ul class="top-nav-social hidden-sm">
+                            <li><a href="#" class="animated fadeIn animation-delay-6 rss"><i class="fa fa-rss"></i></a></li>
+                            <li><a href="#" class="animated fadeIn animation-delay-7 twitter"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" class="animated fadeIn animation-delay-8 facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#" class="animated fadeIn animation-delay-9 google-plus"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#" class="animated fadeIn animation-delay-9 instagram"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="#" class="animated fadeIn animation-delay-8 vine"><i class="fa fa-vine"></i></a></li>
+                            <li><a href="#" class="animated fadeIn animation-delay-7 linkedin"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#" class="animated fadeIn animation-delay-6 flickr"><i class="fa fa-flickr"></i></a></li>
+                        </ul>
+
+                        <div class="dropdown animated fadeInDown animation-delay-11">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>Login</a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-login-box animated fadeInUp">
+                                @using (Html.BeginForm("Authenticate", "Home"))
+                                {
+                                    <h4>Login Form</h4>
+
+                                    <div class="form-group">
+                                        <div class="input-group login-input">
+                                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                            <input type="text" class="form-control" placeholder="Username" name="username">
+                                        </div>
+                                        <br>
+                                        <div class="input-group login-input">
+                                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                            <input type="password" class="form-control" placeholder="Password" name="password">
+                                        </div>
+                                        @*<div class="checkbox pull-left">
+                                            <label>
+                                                <input type="checkbox">
+                                                Remember me
+                               
+                                            </label>
+                                        </div>*@
+                                        <button type="submit" class="btn btn-ar btn-primary pull-right">Login</button>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                }
+
+                            </div>
+                        </div>
+                        <!-- dropdown -->
+
+                        <div class="dropdown animated fadeInDown animation-delay-13">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search"></i></a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-search-box animated fadeInUp">
+                                <form role="form">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search...">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-ar btn-primary" type="button">Go!</button>
+                                        </span>
+                                    </div>
+                                    <!-- /input-group -->
+                                </form>
+                            </div>
+                        </div>
+                        <!-- dropdown -->
+                    </nav>
+                </div>
+                <!-- container -->
+            </header>
+            <!-- header-full -->
+            <nav class="navbar navbar-static-top navbar-default navbar-header-full navbar-dark yamm" role="navigation" id="header">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <a id="ar-brand" class="navbar-brand hidden-lg hidden-md hidden-sm" href="#">GANAF <span>Technologies</span></a>
+                    </div>
+                    <!-- navbar-header -->
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    @*<div class="pull-right">
+                        <a href="javascript:void(0);" class="sb-icon-navbar sb-toggle-right"><i class="fa fa-bars"></i></a>
+                    </div>*@
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+
+                            <li>
+                                @Html.ActionLink("Home", "Index", "Home", null, htmlAttributes: new { @class = "dropdown-toggle" })
+                            </li>
+                            <li>
+                                @Html.ActionLink("Blog", "Home", "Blogging", null, htmlAttributes: new { @class = "dropdown-toggle" })
+                            </li>
+                            <li>
+                                @Html.ActionLink("Contact Us", "ContactUs", "Contact", null, htmlAttributes: new { @class = "dropdown-toggle" })
+                            </li>
+                            <li>
+                                @Html.ActionLink("About Us", "About", "Home", null, htmlAttributes: new { @class = "dropdown-toggle" })
+                            </li>
+                            <li>
+                                @{
+                                    try
+                                    {
+                                        GanafWeb.Logic.Abstract.IRequest req = new GanafWeb.Logic.Concrete.Request();
+                                        var tt = SessionParameters.GetUserAuthenticated();
+                                        var t2 = (req.GetUser(SessionParameters.GetCurrentUser())).userType.Trim();
+
+                                        if (tt && t2.Equals(UserTypes.ADMIN))
+                                        {
+                                    @Html.ActionLink("Admin", "MakePost", "Blogging", null, htmlAttributes: new { @class = "dropdown-toggle" })
+                                        }
+                                    }
+                                    catch (Exception)
+                                    {
+                                        //Ignored
+                                    }
+                                }
+                            </li>
+
+                            @*<li class="dropdown">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Home</a>
+                                <ul class="dropdown-menu dropdown-menu-left">
+                                    <li><a href="index-2.html">Option 1: Default</a></li>
+                                    <li><a href="home_services.html">Option 2: Services</a></li>
+                                    <li><a href="home_full.html">Option 3: Full Intro</a></li>
+                                    <li><a href="home_only_full.html">Option 4: Only Full Intro</a></li>
+                                    <li><a href="home_news.html">Option 5: News</a></li>
+                                    <li><a href="home_profile.html">Option 6: Professional Profile</a></li>
+                                    <li><a href="home_plan.html">Option 7: Subscribe</a></li>
+                                    <li role="presentation" class="dropdown-header">New Home Pages 1.4</li>
+                                    <li><a href="home_polygon.html">Option 8: Product <span class="label label-success pull-right">New</span></a></li>
+                                </ul>
+                            </li>*@
+                        </ul>
+                    </div>
+                    <!-- navbar-collapse -->
+                </div>
+                <!-- container -->
+            </nav>
+
+            <!-- Start main body container -->
+            @RenderSection("featured", required: false)
+
+            @RenderBody()
+            <!-- End main body container -->
+
+
+            <aside id="footer-widgets">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h3 class="footer-widget-title">Sitemap</h3>
+                            <ul class="list-unstyled three_cols">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Portfolio</a></li>
+                                <li><a href="#">Works</a></li>
+                                <li><a href="#">Timeline</a></li>
+                                <li><a href="#">Pricing</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Our Team</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">Login</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                            <h3 class="footer-widget-title">Subscribe</h3>
+                            <p>Supply your email address below to subscribe to our newsletter.</p>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Email Address">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-ar btn-primary" type="button">Subscribe</button>
+                                </span>
+                            </div>
+                            <!-- /input-group -->
+                        </div>
+                        <div class="col-md-4">
+                            <div class="footer-widget">
+                                <h3 class="footer-widget-title">Recent Post</h3>
+                                <div class="media">
+                                    <a class="pull-left" href="#">
+                                        <img class="media-object" src="~/Content/assets/img/demo/m4.jpg" width="75" height="75" alt="image"></a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading"><a href="#">G-SMAS has been officially launched. Click here to visit its official website.</a></h4>
+                                        <small>May 10, 2015</small>
+                                    </div>
+                                </div>
+                                <div class="media">
+                                    <a class="pull-left" href="#">
+                                        <img class="media-object" src="~/Content/assets/img/demo/m4.jpg" width="75" height="75" alt="image"></a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading"><a href="#">Our HR system would be out in a couple of weeks. Watch out!</a></h4>
+                                        <small>June 12, 2015</small>
+                                    </div>
+                                </div>
+                                <div class="media">
+                                    <a class="pull-left" href="#">
+                                        <img class="media-object" src="~/Content/assets/img/demo/m4.jpg" width="75" height="75" alt="image"></a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading"><a href="#">You can now request a website for your company from here.</a></h4>
+                                        <small>June 5, 2015</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="footer-widget">
+                                <h3 class="footer-widget-title">Recent Works</h3>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6">
+                                        <a href="#" class="thumbnail">
+                                            <img src="~/Content/assets/img/demo/wf1.jpg" class="img-responsive" alt="Image"></a>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6">
+                                        <a href="#" class="thumbnail">
+                                            <img src="~/Content/assets/img/demo/wf2.jpg" class="img-responsive" alt="Image"></a>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6">
+                                        <a href="#" class="thumbnail">
+                                            <img src="~/Content/assets/img/demo/wf3.jpg" class="img-responsive" alt="Image"></a>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6">
+                                        <a href="#" class="thumbnail">
+                                            <img src="~/Content/assets/img/demo/wf4.jpg" class="img-responsive" alt="Image"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+            </aside>
+            <!-- footer-widgets -->
+            <footer id="footer">
+                <p>&copy; 2015 <a href="#">GANAF Technologies</a>, inc. All rights reserved.</p>
+            </footer>
+
+        </div>
+        <!-- boxed -->
+    </div>
+    <!-- sb-site -->
+
+
+    <!-- sb-slidebar sb-right -->
+    <div id="back-top">
+        <a href="#header"><i class="fa fa-chevron-up"></i></a>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Compiled in vendors.js -->
+    <!--
+    <script src="~/Content/assets/js/jquery.min.js"></script>
+    <script src="~/Content/assets/js/jquery.cookie.js"></script>
+    <script src="~/Content/assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="~/Content/assets/js/bootstrap.min.js"></script>
+    <script src="~/Content/assets/js/bootstrap-switch.min.js"></script>
+    <script src="~/Content/assets/js/wow.min.js"></script>
+    <script src="~/Content/assets/js/slidebars.min.js"></script>
+    <script src="~/Content/assets/js/jquery.bxslider.min.js"></script>
+    <script src="~/Content/assets/js/holder.js"></script>
+    <script src="~/Content/assets/js/buttons.js"></script>
+    <script src="~/Content/assets/js/jquery.mixitup.min.js"></script>
+    <script src="~/Content/assets/js/circles.min.js"></script>
+    <script src="~/Content/assets/js/masonry.pkgd.min.js"></script>
+    <script src="~/Content/assets/js/jquery.matchHeight-min.js"></script>
+    -->
+
+    <script src="~/Content/assets/js/vendors.js"></script>
+
+    <script src="~/Content/assets/js/styleswitcher.js"></script>
+
+    <!-- Syntaxhighlighter -->
+    <script src="~/Content/assets/js/syntaxhighlighter/shCore.js"></script>
+    <script src="~/Content/assets/js/syntaxhighlighter/shBrushXml.js"></script>
+    <script src="~/Content/assets/js/syntaxhighlighter/shBrushJScript.js"></script>
+
+    <script src="~/Content/assets/js/app.js"></script>
+    <script src="~/Content/assets/js/index.js"></script>
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

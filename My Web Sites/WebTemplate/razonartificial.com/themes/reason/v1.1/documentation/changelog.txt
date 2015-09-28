@@ -1,0 +1,14 @@
+Version 1.1.0
+-------------
+ - Grunt Support (new)
+ - Restructures directories
+ - Change font headers Coming Soon Option 1. Lato to Muli
+ - Change font headers Home Full Intro. Lato to Muli
+ - Fixed: Remove header logo in small devices.
+ - Fixed: z-index controls carousel-images changed from 2000 to 90
+ - Fixed: Some links of the demo.
+ 
+
+Version 1.0.0
+-------------
+ - Initial Release
